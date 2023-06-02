@@ -20,6 +20,28 @@ class Cityzen extends Person{
     }
 }
 
-const jhon = new Cityzen(1,'Luis',33, '256546161651');
-console.log(jhon);
+// const jhon = new Cityzen(1,'Luis',33, '256546161651');
+// console.log(jhon);
+    
+class Car{
+
+    constructor(private make: string, private model: string){
+    }
+
+    set setMake(value: string){
+        this.make = value;
+    }
+
+    
+    get getMake(){
+        return this.make;
+    }
+}
+
+const acura = new Car('Acura','TL');
+console.log(acura.getMake);
+acura.setMake = 'Honda';
+console.log(acura.getMake);
+
+
     
