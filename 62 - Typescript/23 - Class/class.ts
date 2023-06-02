@@ -25,6 +25,8 @@ class Cityzen extends Person{
     
 class Car{
 
+    static MAX_NUM_OF_WHELLS = 6;
+
     constructor(private make: string, private model: string){
     }
 
@@ -36,12 +38,18 @@ class Car{
     get getMake(){
         return this.make;
     }
+
+    static carStats(mile: number){
+        return{ mileage: mile, type: 'Hybrid' };
+    }
 }
 
 const acura = new Car('Acura','TL');
-console.log(acura.getMake);
+// console.log(acura.getMake);
 acura.setMake = 'Honda';
-console.log(acura.getMake);
+// console.log(acura.getMake);
+console.log(Car.MAX_NUM_OF_WHELLS);
+console.log(Car.carStats(10));
 
 
     
