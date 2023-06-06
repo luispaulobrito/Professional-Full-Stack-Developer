@@ -40,9 +40,9 @@ public class CustomerService {
     }
 
     public void deleteCustomerId(Integer customerId) {
-        if (!customerDao.ExistisPersonWithEmail(customerId)){
+        if (!customerDao.ExistisPersonWithId(customerId)){
             throw new ResourceNotFoundException(
-                    "customer with id [%s] not found".formatted(id)
+                    "customer with id [%s] not found".formatted(customerId)
             );
         }
         customerDao.deleteCustomerById(customerId);
