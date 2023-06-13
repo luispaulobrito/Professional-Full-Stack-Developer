@@ -20,3 +20,39 @@ latitude = {
 
 latitude.connect('Adapter 1')
 console.log(latitude);
+
+interface HttpConnection{
+    createConnection(url: string):void;
+}
+
+class MakeConnection implements HttpConnection{
+    private headers: string[];
+    private body: string;
+    
+    constructor(headers: string[], body: string){
+        this.headers = headers;
+        this.body = body;
+    }
+
+    createConnection(url: string): void {
+        console.log(`Connection created to ${url}`);
+    }
+}
+
+interface Patient{
+    name: string;
+}
+
+interface Client extends Patient{
+    rating: number;
+}
+
+class Tenant implements Client{
+    rating: number;
+    name: string;
+    
+    constructor(rating: number, name: string){
+        this.rating = rating;
+        this.name = name;
+    }
+}
